@@ -16,7 +16,7 @@ public class Ejemplo4 {
     
     public void calcular(){
         
-        double sueldo=0;
+        double sueldo=0; 
         double descuento=0;
         double sub=0;
         double sueldof=0;
@@ -29,10 +29,10 @@ public class Ejemplo4 {
             descuento = 0.10;
             sub= sueldo*descuento;
             sueldof=sueldo-sub;
-        }
+        } 
         else{
             descuento = 0.04;
-            sub= sueldo*descuento;
+             sub= sueldo*descuento;
             sueldof=sueldo-sub;
         }
        System.out.println("El sueldo del empleado es: "+ sueldof);
