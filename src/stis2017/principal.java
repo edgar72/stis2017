@@ -12,8 +12,8 @@ package stis2017;
 public class principal {
 
     public static void main(String[] args) {
-        Ejemplo4 ejemplo4 = new Ejemplo4();
-        ejemplo4.calcular();
+        Exam exam = new Exam();
+        exam.Iniciar();
     }
     
     
