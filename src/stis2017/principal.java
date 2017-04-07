@@ -7,7 +7,7 @@ package stis2017;
 
 /**
  *
- * @author pc
+ * @author edgar
  */
 public class principal {
 

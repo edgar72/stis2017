@@ -62,7 +62,7 @@ public class Exam {
             mensaje="Muy bueno";
         }
         else if(promedio>8 && promedio<=10){
-            mensaje="Excelente";
+            mensaje="Excelente.";
         }
         return mensaje;
     }
