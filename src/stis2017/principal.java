@@ -15,8 +15,4 @@ public class principal {
         Exam exam = new Exam();
         exam.Iniciar();
     }
-    
-    
-    
-    
 }

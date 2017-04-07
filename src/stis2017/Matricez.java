@@ -12,6 +12,7 @@ import java.util.Scanner;
  *
  * @author pc
  */
+
 public class Matricez {
     public void iniciar(){
     Scanner sc = new Scanner (System.in); 

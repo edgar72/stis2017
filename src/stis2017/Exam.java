@@ -15,12 +15,7 @@ import java.util.Scanner;
 public class Exam {
     public void Iniciar(){
         Scanner sc= new Scanner(System.in);
-        
-        
-        
-        int dimension=0;
-        
-        
+        int dimension;
         System.out.println("Ingrese el numero de alumnnos que ingresara: ");
         dimension=sc.nextInt();
         String nombre[]= new String[dimension];
@@ -30,48 +25,57 @@ public class Exam {
         int edad[]= new int [dimension];
         double general=0;
         double pgeneral=0;
-        double todo=0;
         int notas=0;
-        String mensaje="";
         for(int i=0; i<dimension; i++){
-            System.out.println("Ingrese el nombre del alumno: ");
+            System.out.println("Ingrese el nombre del alumno: "+(i+1));
             nombre[i]=sc.next();
             System.out.println("Ingrese la edad: ");
             edad[i]=sc.nextInt();
-            notas++;
             System.out.println("Ingrese la nota 1");
             nota[i]=sc.nextDouble();
-            notas++;
             System.out.println("Ingrese la nota 2");
             nota2[i]=sc.nextDouble();
-            promedio[i]=(nota[i]+nota2[i])/2;
-            general=nota[i]+nota2[i];
-            pgeneral=general+general;
-            todo=pgeneral/notas;
-        }
-        for(int i=0; i<dimension; i++){
-            System.out.println("Nombre del alumno "+ nombre[i]);
-            System.out.println("edad del alumno "+ edad[i]);
-            System.out.println("Promedio del alumno "+promedio[i]);
-            calcprom(promedio[i]);
+            notas++;
+            promedio[i]=PromedioAlum(nota[i], nota2[i]);
+            pgeneral=pgeneral+promedio[i];
            
         }
-         System.out.println("El promedio general es de: "+todo);
+        for(int i=0; i<dimension; i++){
+            System.out.println("Nombre del alumno "+(i+1)+" "+ nombre[i]);
+            System.out.println("edad del alumno "+(i+1)+" "+ edad[i]);
+            System.out.println("Promedio del alumno "+(i+1)+" "+promedio[i]);
+            System.out.println("Le decimos que: "+Mandarmsj(promedio[i])+"\n\n");
+            
+        }
+        
+         System.out.println("El promedio general es de: "+PromGeneral(pgeneral, notas));
     }
-    public double calcprom (double promedio){
+    public String Mandarmsj(double promedio){
         String mensaje="";
-        if(promedio>0 && promedio<4){
+        if(promedio>0 && promedio<=4){
+            mensaje="Muy malo";
+        }
+        else if(promedio>4 && promedio<=6){
             mensaje="Deficiente";
         }
-        else if(promedio>=4 && promedio<6){
-            mensaje="Regular";
-        }
-        else if(promedio>=6 && promedio<8){
+        else if(promedio>6 && promedio<=8){
             mensaje="Muy bueno";
         }
-        else{
+        else if(promedio>8 && promedio<=10){
             mensaje="Excelente";
         }
+        return mensaje;
+    }
+    
+    public double PromGeneral(double pgeneral, int notas ){
+        double todo;
+        todo=pgeneral/notas;
+        Math.round(todo);
+     return todo;   
+    }
+    
+    public double PromedioAlum(double nota, double nota2){
+        double promedio=(nota+nota2)/2;
         return promedio;
-    }  
+    }
 }
